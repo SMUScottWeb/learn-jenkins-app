@@ -22,7 +22,7 @@ pipeline {
             }
         }*/
 
-        STAGE ('Tests') {
+        stage ('Tests') {
             parellel {
                 stage('Unit Tests') {
                     agent{
