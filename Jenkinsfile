@@ -22,7 +22,7 @@ pipeline {
             }
         }*/
 
-        stage ('Tests') {
+        stage('Tests') {
             parellel {
                 stage('Unit Tests') {
                     agent{
@@ -64,8 +64,8 @@ pipeline {
                         '''
                     }
                             post {
-                                always{
-                                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+                            always{
+                                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                                 }
                             }
                 }
